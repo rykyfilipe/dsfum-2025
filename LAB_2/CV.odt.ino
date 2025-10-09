@@ -1,24 +1,23 @@
 void setup() {
   pinMode(13, OUTPUT);
-
 }
 
 void loop() {
-  
-  for (int vController = 1; vController < 20; vController++){
+  // Fade in
+  for (int v = 1; v <= 20; v++) {
     unsigned long t = millis();
-    while(millis()-t < 20){
-        if(millis()-t < vController) digitalWrite(13,1);
-        else digitalWrite(13,0);
+    while (millis() - t < 20) {
+      if (millis() - t < v) digitalWrite(13, 1);
+      else digitalWrite(13, 0);
+    }
   }
-  
-  for (int vController = 20; vController > 1; vController--){
-    unsigned long t = millis();
-    while(millis()-t < 20){
-        if(millis()-t < vController) digitalWrite(13,1);
-        else digitalWrite(13,0);
-  }
-  }
-}
 
+  // Fade out
+  for (int v = 20; v >= 1; v--) {
+    unsigned long t = millis();
+    while (millis() - t < 20) {
+      if (millis() - t < v) digitalWrite(13, 1);
+      else digitalWrite(13, 0);
+    }
+  }
 }
