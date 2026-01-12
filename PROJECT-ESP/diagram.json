@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "author": "Gemini AI",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 180, "left": 150, "attrs": {} },
+    { "type": "wokwi-7segment", "id": "seg0", "top": -50, "left": 0, "attrs": { "common": "cathode" } },
+    { "type": "wokwi-7segment", "id": "seg1", "top": -50, "left": 60, "attrs": { "common": "cathode" } },
+    { "type": "wokwi-7segment", "id": "seg2", "top": -50, "left": 120, "attrs": { "common": "cathode" } },
+    { "type": "wokwi-7segment", "id": "seg3", "top": -50, "left": 180, "attrs": { "common": "cathode" } },
+    { "type": "wokwi-7segment", "id": "seg4", "top": -50, "left": 240, "attrs": { "common": "cathode" } },
+    { "type": "wokwi-7segment", "id": "seg5", "top": -50, "left": 300, "attrs": { "common": "cathode" } },
+    { "type": "wokwi-7segment", "id": "seg6", "top": -50, "left": 360, "attrs": { "common": "cathode" } },
+    { "type": "wokwi-7segment", "id": "seg7", "top": -50, "left": 420, "attrs": { "common": "cathode" } }
+  ],
+  "connections": [
+    ["esp:D32", "seg0:A", "red", ["v0"]], ["seg0:A", "seg1:A", "red", []], ["seg1:A", "seg2:A", "red", []], ["seg2:A", "seg3:A", "red", []], ["seg3:A", "seg4:A", "red", []], ["seg4:A", "seg5:A", "red", []], ["seg5:A", "seg6:A", "red", []], ["seg6:A", "seg7:A", "red", []],
+    ["esp:D33", "seg0:B", "blue", ["v0"]], ["seg0:B", "seg1:B", "blue", []], ["seg1:B", "seg2:B", "blue", []], ["seg2:B", "seg3:B", "blue", []], ["seg3:B", "seg4:B", "blue", []], ["seg4:B", "seg5:B", "blue", []], ["seg5:B", "seg6:B", "blue", []], ["seg6:B", "seg7:B", "blue", []],
+    ["esp:D25", "seg0:C", "green", ["v0"]], ["seg0:C", "seg1:C", "green", []], ["seg1:C", "seg2:C", "green", []], ["seg2:C", "seg3:C", "green", []], ["seg3:C", "seg4:C", "green", []], ["seg4:C", "seg5:C", "green", []], ["seg5:C", "seg6:C", "green", []], ["seg6:C", "seg7:C", "green", []],
+    ["esp:D26", "seg0:D", "yellow", ["v0"]], ["seg0:D", "seg1:D", "yellow", []], ["seg1:D", "seg2:D", "yellow", []], ["seg2:D", "seg3:D", "yellow", []], ["seg3:D", "seg4:D", "yellow", []], ["seg4:D", "seg5:D", "yellow", []], ["seg5:D", "seg6:D", "yellow", []], ["seg6:D", "seg7:D", "yellow", []],
+    ["esp:D27", "seg0:E", "orange", ["v0"]], ["seg0:E", "seg1:E", "orange", []], ["seg1:E", "seg2:E", "orange", []], ["seg2:E", "seg3:E", "orange", []], ["seg3:E", "seg4:E", "orange", []], ["seg4:E", "seg5:E", "orange", []], ["seg5:E", "seg6:E", "orange", []], ["seg6:E", "seg7:E", "orange", []],
+    ["esp:D14", "seg0:F", "cyan", ["v0"]], ["seg0:F", "seg1:F", "cyan", []], ["seg1:F", "seg2:F", "cyan", []], ["seg2:F", "seg3:F", "cyan", []], ["seg3:F", "seg4:F", "cyan", []], ["seg4:F", "seg5:F", "cyan", []], ["seg5:F", "seg6:F", "cyan", []], ["seg6:F", "seg7:F", "cyan", []],
+    ["esp:D12", "seg0:G", "purple", ["v0"]], ["seg0:G", "seg1:G", "purple", []], ["seg1:G", "seg2:G", "purple", []], ["seg2:G", "seg3:G", "purple", []], ["seg3:G", "seg4:G", "purple", []], ["seg4:G", "seg5:G", "purple", []], ["seg5:G", "seg6:G", "purple", []], ["seg6:G", "seg7:G", "purple", []],
+    ["esp:D23", "seg0:DP", "white", ["v0"]], ["seg0:DP", "seg1:DP", "white", []], ["seg1:DP", "seg2:DP", "white", []], ["seg2:DP", "seg3:DP", "white", []], ["seg3:DP", "seg4:DP", "white", []], ["seg4:DP", "seg5:DP", "white", []], ["seg5:DP", "seg6:DP", "white", []], ["seg6:DP", "seg7:DP", "white", []],
+    
+    ["esp:D13", "seg0:COM.1", "black", []],
+    ["esp:D15", "seg1:COM.1", "black", []],
+    ["esp:D2", "seg2:COM.1", "black", []],
+    ["esp:D4", "seg3:COM.1", "black", []],
+    ["esp:D5", "seg4:COM.1", "black", []],
+    ["esp:D18", "seg5:COM.1", "black", []],
+    ["esp:D19", "seg6:COM.1", "black", []],
+    ["esp:D21", "seg7:COM.1", "black", []],
+    ["esp:TX0", "$serialMonitor:RX", ""],
+    ["esp:RX0", "$serialMonitor:TX", ""]
+
+  ],
+  "serialMonitor": {
+      "collapse": false,
+      "convertEol": false,
+      "display": "always",
+      "newline": "lf"
+  },
+  "dependencies": {}
+}
