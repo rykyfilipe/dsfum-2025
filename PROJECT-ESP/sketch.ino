@@ -23,22 +23,21 @@ void setup() {
 }
 
 void loop() {
-  // PASUL 1: Citirea parolei de la Serial (conform cerintei)
+  
   if (Serial.available()) {
     String input = Serial.readStringUntil('\n');
     input.trim();
     if (input.length() > 0) {
       targetValue = strtoul(input.c_str(), NULL, 16); // Convertim textul HEX in numar
-      currentValue = 0;    // Resetam cautarea de la 0
+      currentValue = 0;   
       isRunning = true;    // Pornim simularea
       Serial.print("Cautam parola: "); Serial.println(input);
     }
   }
 
-  // PASUL 2: Simularea Brute-Force (Crestem pana la 4G / FFFFFFFF)
+  
   if (isRunning) {
     if (currentValue < targetValue) {
-      // Incrementam cu un numar mare pentru a simula rapiditatea atacului
       if (targetValue - currentValue > 500) currentValue += 443; 
       else currentValue++;
     } else {
@@ -48,11 +47,9 @@ void loop() {
     }
   }
 
-  // PASUL 3: Afisarea pe cei 8 digiti
   refreshDisplay(currentValue);
 }
 
-// Functie simpla de afisare folosind text (sprintf)
 void refreshDisplay(unsigned long val) {
   char textHex[9]; 
   sprintf(textHex, "%08X", val); // Transforma numarul in "0000ABCD"
@@ -65,7 +62,7 @@ void refreshDisplay(unsigned long val) {
     if (caracter >= '0' && caracter <= '9') index = caracter - '0';
     else index = caracter - 'A' + 10;
 
-    // Multiplexare: aprindem digitul i
+    // Multiplexare
     opresteTotiDigitii();
     scrieSegmente(index);
     digitalWrite(digitPins[i], LOW); 
