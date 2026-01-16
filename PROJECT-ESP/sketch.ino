@@ -38,7 +38,7 @@ void loop() {
   
   if (isRunning) {
     if (currentValue < targetValue) {
-      if (targetValue - currentValue > 500) currentValue += 443; 
+      if (targetValue - currentValue > 500) currentValue += 500; 
       else currentValue++;
     } else {
       currentValue = targetValue; // Am gasit-o!
